@@ -214,7 +214,7 @@
                 let reply = document.createElement('a')
                 reply.className = 'reply'
                 reply.innerHTML = '评论' + json[i].comments
-                reply.href = json[i].html_url
+                reply.href = '/t#' + json[i].number
 
                 let ops = document.createElement('div')
                 ops.className = 'ops'

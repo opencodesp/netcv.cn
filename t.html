@@ -133,6 +133,11 @@
                 }
             })).
             then(resp => {
+                console.log(resp.status)
+                if(resp.status == 404) {
+                    location.href = '404.html'
+                    throw 'Not Found'
+                }
                 let etdg = resp.headers.get('etag')
                 console.log(RAW_DATA_ETAG_KEY + issueId +': ' + etdg)
                 localStorage.setItem(RAW_DATA_ETAG_KEY + issueId, etdg)
