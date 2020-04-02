@@ -32,8 +32,9 @@
         }
         .container {padding: 20px;max-width: 820px;margin: 0 auto;}
         .container li {margin: 10px 0;background-color: #fff;padding: 10px 15px;box-shadow: 0 0 3px rgb(2, 2, 2, 0.1);}
-        .container li .toReply {display: inline-block;text-decoration: none;color: #159957;}
-        .container li .toIndex {float: right;text-decoration: none;color: #159957;}
+        .container li .toReply {display: inline-block;}
+        .container li .toReply, .container li .toIndex {font-size: 14px;text-decoration: none;color: #159957;}
+        .container li .toIndex {float: right;}
         .title {font-weight: bold;font-size: 22px;margin: 5px 0;color: #159957;}
         .title:hover {cursor: pointer;}
         .author {line-height: 16px;padding: 8px 0;color: #ccc;}
@@ -45,12 +46,13 @@
 
         .content {line-height: 1.6;font-size: 14px;word-break: break-word;margin-top: 10px;}
         .content code {background: #eee;padding: 0 3px;display: inline-block;margin: 0 2px;color: #159957;font-size: 12px;line-height: 1.6;}
-        .content pre code {display: block;}
+        .content pre code {display: block;padding: 8px 5px;margin: 0 -2px;word-break: keep-all;overflow-x: auto;}
         .content p {margin-bottom: 16px;}
         .content>:last-child,.content blockquote>:last-child {margin-bottom: 0;}
         .content img {max-width: 100%;max-height: 360px;}
         .content h1 {font-size: 22px;color: #159957;}
         .content h2 {font-size: 18px;border-bottom: 1px solid #eee;line-height: 32px;padding: 5px 0;margin: 10px 0;}
+        .content h3, .content h4 {line-height: 22px;padding: 2px 0;margin: 3px 0;}
         .content blockquote {padding: 2px 10px;margin: 10px 0;color: #222;background: #f8f8f8;border-left: 3px solid #159957;}
 
         .loadding {max-width: 820px;margin: 5px auto;position: relative;overflow: hidden;}
