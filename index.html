@@ -45,8 +45,11 @@
         .author {line-height: 16px;padding: 8px 0;color: #ccc;}
         .author .avatar {float: left;margin: -4px 10px 0 0;}
         .author .avatar img {border-radius: 50%;}
+        .author .ops {float: right;text-align: right;margin-left: 10px;color: #159957;font-size: 12px;}
+        .author .ops a {color: #159957;text-decoration: none;font-size: 12px;margin-right: 5px;}
+        .author .ops .reply {color: #159957;text-decoration: none;font-size: 12px;margin-left: 20px;}
 
-        .content {line-height: 1.6;font-size: 14px;word-break: break-word;margin-top: 10px;display: none;}
+        .content {line-height: 1.6;font-size: 14px;word-break: break-word;margin-top: 10px;}
         .content code {background: #eee;padding: 0 3px;display: inline-block;margin: 0 2px;color: #159957;font-size: 12px;line-height: 1.6;}
         .content pre code {display: block;}
         .content p {margin-bottom: 16px;}
@@ -96,6 +99,7 @@
             header .logo {font-size: 22px;margin-top: 20px;line-height: 32px;text-align: center;}
             .tips {top: 10px;line-height: 1.6;right: 10px;left: initial;text-align: right;}
             .loadding {margin: 0 10px;}
+            .content {display: none;}
         }
     </style>
 </head>
@@ -204,11 +208,28 @@
                 avatarLink.className = 'avatar'
                 avatarLink.appendChild(avatarImg)
 
+                let reply = document.createElement('a')
+                reply.className = 'reply'
+                reply.innerHTML = '评论' + json[i].comments
+                reply.href = json[i].html_url
+
+                let ops = document.createElement('div')
+                ops.className = 'ops'
+                for (let j in json[i].labels) {
+                    let label = json[i].labels[j]
+                    let labelLink = document.createElement('a')
+                    labelLink.href = 'https://github.com/opencodesp/netcv.cn/labels/' + label.name
+                    labelLink.innerHTML = '#' + label.name
+                    ops.appendChild(labelLink)
+                }
+                ops.appendChild(reply)
+
                 let author = document.createElement('div')
                 author.appendChild(avatarLink)
                 author.className = 'author'
                 let createTime = new Date(Date.parse(json[i].created_at))
                 author.innerHTML += createTime.getFullYear() + '/' + createTime.getMonth() + '/' + createTime.getDay() + ' ' + createTime.getHours() + ':' + createTime.getMinutes()
+                author.appendChild(ops)
 
                 let content = document.createElement('div')
                 content.className = 'content'
