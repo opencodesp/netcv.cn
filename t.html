@@ -105,9 +105,8 @@
         let loaddingBox = document.querySelector('.loadding')
         let issueNumber = 0
         
-        window.onhashchange = function () {
-            location.reload(true)
-        }
+        window.onhashchange = function () {location.reload(true)}
+        loaddingBox.onclick = function(){location.reload(true)}
 
         function main()  {
             // issue id
