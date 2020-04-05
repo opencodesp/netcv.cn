@@ -212,11 +212,12 @@
             for(let i in json) {
 
                 let avatarImg = document.createElement('img')
+                avatarImg.id = 'issue-' + json[i].id
                 avatarImg.src = DEF_AVATAR_DATA
                 avatarImg.alt = json[i].user.login
                 avatarImg.width = 22
                 avatarImg.height = 22
-                fetchAvatar(json[i].user.avatar_url, 'issue-' + json.id)
+                fetchAvatar(json[i].user.avatar_url, avatarImg.id)
 
                 let avatarLink = document.createElement('a')
                 avatarLink.href = 'https://github.com/' + json[i].user.login
