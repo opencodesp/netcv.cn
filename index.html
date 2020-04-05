@@ -84,12 +84,16 @@
             background-color: #fff;
             opacity: 0.4;
             animation: loadding 5s infinite ease-out;
-            height: 46px;
+            height: 186px;
             width: 48px;
             box-shadow: 0 0 10px #fff;
             top: 15px;
         }
-        .loadding .avatarArea, .loadding .titleArea,.loadding .contentArea {background-color: #eee;margin: 5px 15px;height: 12px;}
+        .loadding .avatarArea, .loadding .titleArea,.loadding .contentArea {
+            background-color: #eee;margin: 5px 15px;height: 22px;
+        }
+
+        .loadding .contentArea {height: 132px;}
 
         @keyframes loadding {
             0% {left: 0;}
@@ -102,6 +106,8 @@
             header .logo {font-size: 22px;margin-top: 20px;line-height: 32px;text-align: center;}
             .tips {top: 10px;line-height: 1.6;right: 10px;left: initial;text-align: right;}
             .loadding {margin: 0 10px;}
+            .loadding .contentArea {height: 22px;}
+            .loadding .bg {height: 66px;}
             .title {font-size: 18px;}
             .content {display: none;}
         }
