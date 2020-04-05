@@ -384,6 +384,11 @@
             tipsText.className = 'tips'
             tipsText.innerHTML = text
             loaddingBox.appendChild(tipsText)
+
+            let commonTips = document.createElement('div')
+            commonTips.className = 'tips'
+            commonTips.innerHTML = '<br />Change the network, tap me and try again!'
+            loaddingBox.appendChild(commonTips)
         }
 
         //// 关闭提示框

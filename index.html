@@ -104,7 +104,7 @@
             .container {padding: 10px;max-width: 100%;}
             header {height: 92px;}
             header .logo {font-size: 22px;margin-top: 20px;line-height: 32px;text-align: center;}
-            .tips {top: 10px;line-height: 1.6;right: 10px;left: initial;text-align: right;}
+            .tips {top: 10px;line-height: 1.6;right: 10px;left: initial;}
             .loadding {margin: 0 10px;}
             .loadding .contentArea {display: none;}
             .loadding .bg {height: 54px;}
@@ -304,6 +304,11 @@
             tipsText.className = 'tips'
             tipsText.innerHTML = text
             loaddingBox.appendChild(tipsText)
+
+            let commonTips = document.createElement('div')
+            commonTips.className = 'tips'
+            commonTips.innerHTML = '<br />Change the network, tap me and try again!'
+            loaddingBox.appendChild(commonTips)
         }
 
         //// 关闭提示框
