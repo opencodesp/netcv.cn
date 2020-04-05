@@ -327,7 +327,7 @@
 
         //// 博主头像显示检测
         function fetchAvatar(url, imgId) {
-            fetch(url).then(resp => resp.blob()).then(imgBlob => document.querySelector(imgId).src=URL.createObjectURL(imgBlob)).catch(e => console.log(e))
+            fetch('https://cors-anywhere.herokuapp.com/' + url).then(resp => resp.blob()).then(imgBlob => document.querySelector(imgId).src=URL.createObjectURL(imgBlob)).catch(e => console.log(e))
         }
 
         // 执行入口函数
