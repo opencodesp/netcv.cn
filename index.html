@@ -52,6 +52,7 @@
         .author .ops .reply {color: #159957;text-decoration: none;font-size: 12px;margin: 0 0 0 10px;}
 
         .content {line-height: 1.6;font-size: 14px;word-break: break-word;margin-top: 10px;}
+        .content .empty-content {text-align: center;color: #ccc;font-size: 16px;padding: 10px;line-height: 28px;}
         .content code {background: #eee;padding: 0 3px;display: inline-block;margin: 0 2px;color: #159957;font-size: 12px;line-height: 1.6;}
         .content pre code {display: block;padding: 8px 5px;margin: 0 -2px;margin-bottom: 15px}
         .content p {margin-bottom: 16px;}
@@ -251,6 +252,12 @@
                 let content = document.createElement('div')
                 content.className = 'content'
                 content.innerHTML = marked(json[i].body)
+                if (content.innerHTML.length == 0) {
+                    let emptyContentDom = document.createElement('div')
+                    emptyContentDom.setAttribute('class', 'empty-content')
+                    emptyContentDom.innerHTML = '暂无内容（:）'
+                    content.appendChild(emptyContentDom)
+                }
 
                 let title = document.createElement('div')
                 title.className = 'title'
