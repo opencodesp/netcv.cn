@@ -308,6 +308,7 @@
 
         //// 显示提示框
         function showTips(text) {
+            loaddingBox.style.display = 'block'
             loaddingBox.innerHTML = ''
             let tipsText = document.createElement('div')
             tipsText.className = 'tips'
