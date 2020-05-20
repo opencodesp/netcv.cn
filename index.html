@@ -194,6 +194,7 @@
             // Render Cahce
             let rawData = localStorage.getItem(RAW_DATA_KEY)
             if(rawData) {
+                closeTips()
                 renderByRawData(JSON.parse(rawData).rawData)
                 return
             }
