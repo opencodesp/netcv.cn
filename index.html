@@ -149,6 +149,7 @@
                 let druation = new Date().getTime() - dataJson.uptime
                 console.log('Cache druation: ', druation/1000, 's')
                 if(druation/1000 > RAW_DATA_VALID_SECONDS) {
+                    renderByRawData(dataJson.rawData)
                     fetchRawData()
                     return       
                 }
@@ -209,6 +210,7 @@
         //// 渲染命令
         function renderIssues(json) {
             let container = document.querySelector('.container')
+            container.innerHTML = ''
             let ul = document.createElement('ul')
             container.appendChild(ul)
             for(let i in json) {
